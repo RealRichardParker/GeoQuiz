@@ -60,7 +60,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
     }
-
+//comment
     private void updateQuestion() {
         mCurrentIndex = (1 + mCurrentIndex) % mQuestionBank.length;
         int question = mQuestionBank[mCurrentIndex].getTextResId();
