@@ -8,11 +8,13 @@ public class Question {
 
     private int mTextResId;
     private boolean mAnswerTrue;
+    private boolean mUserHasCheated;
 
     public Question(int mTextResId, boolean mAnswerTrue) {
 
         this.mTextResId = mTextResId;
         this.mAnswerTrue = mAnswerTrue;
+        mUserHasCheated = false;
     }
 
     public int getTextResId() {
@@ -29,5 +31,13 @@ public class Question {
 
     public void setAnswerTrue(boolean answerTrue) {
         mAnswerTrue = answerTrue;
+    }
+
+    public boolean isUserHasCheated() {
+        return mUserHasCheated;
+    }
+
+    public void setUserHasCheated(boolean userHasCheated) {
+        mUserHasCheated = userHasCheated;
     }
 }
