@@ -2,6 +2,7 @@ package studio.realrichardparker.geoquiz;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton mPreviousButton;
     private Button mCheatButton;
     private boolean mIsCheater;
+    private TextView mAPILevel;
 
     private Question[] mQuestionBank = new Question[] {
             new Question(R.string.question_oceans, true),
@@ -46,6 +48,9 @@ public class QuizActivity extends AppCompatActivity {
             mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
             mIsCheater = savedInstanceState.getBoolean(KEY_CHEATED, false);
         }
+
+        mAPILevel = (TextView) findViewById(R.id.api_level);
+        mAPILevel.setText("API level " + Build.VERSION.SDK_INT);
 
         mQuestionTextView = (TextView) findViewById(R.id.questions_text_view);
         mQuestionTextView.setOnClickListener(new View.OnClickListener() {
